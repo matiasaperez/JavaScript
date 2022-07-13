@@ -32,19 +32,26 @@ const productos = [
 	precioProducto.append(`$${producto.precio}`);
 	botonComprar.append('Comprar');
 	botonComprar.id = `${producto.id}`;
-  
+	
+	 
 	botonComprar.onclick = () => {
 	  const productoComprado = productos.find(producto => producto.id === botonComprar.id);
-	  carrito.push({ nombre: productoComprado.modelo, precio: productoComprado.precio })
+	  carrito.push({ nombre: productoComprado.modelo, precio: productoComprado.precio });
+	  let productoCompradoJSON = JSON.stringify(productoComprado)
+		localStorage.setItem('productoComprado', productoCompradoJSON)
+
 	}
 
 	divProducto.append(imgProducto, nombreProducto, precioProducto, botonComprar);
-
 	contenedorTienda.append(divProducto);
   
   }
   
-  const mostrarCarrito = () => {
+
+
+
+	
+  const mostrarCarrito =  () => {
   
 	for (const producto of carrito) {
 	  const nombreProducto = `<h4>Producto : ${producto.nombre}</h4>`
@@ -52,15 +59,21 @@ const productos = [
 	  contenedorCarrito.innerHTML += nombreProducto
 	  contenedorCarrito.innerHTML += precioProducto
 	}
-  
+	
+
 	const total = carrito.reduce((accumulador, producto) => accumulador + producto.precio, 0);
-	contenedorCarrito.append(`Total Compra :  ${total}`)
-  
-  }
-  
-  let botonCarrito = document.getElementById("btnCarrito")
+	contenedorCarrito.append(`Total Compra :  ${total}`);
+  };
+
+ 
+  let itemsfromStorage = localStorage.getItem('productoComprado')
+  let productosBack = JSON.parse( itemsfromStorage)
+
+
+  const botonCarrito = document.getElementById("btnCarrito")
   botonCarrito.onclick = mostrarCarrito;
-  
+
+
   const btnbuscar = document.getElementById("btnBuscar");
   const inputBuscador = document.getElementById('buscadorInput');
   
