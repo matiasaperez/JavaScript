@@ -95,5 +95,6 @@ const productos = [
 	   }
 	   
   }
+ 
   
   btnbuscar.onclick = buscarProducto;
