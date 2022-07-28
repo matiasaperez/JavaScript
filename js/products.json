@@ -1,0 +1,7 @@
+[
+	{ "id": 0, "tipo": "Hamaca", "precio": 15000},
+	{ "id": 1, "tipo": "Sillon de jardín", "precio": 50000},
+	{ "id": 2, "tipo": "Mesa de jardín", "precio": 30000},
+	{ "id": 3, "tipo": "Reposeras","precio": 5000},
+	{ "id": 4, "tipo": "Colchonetas", "precio": 5000}
+  ]
