@@ -1,9 +1,9 @@
 const productos = [
-	{ id: '0', tipo: "Sommier", modelo: "Una plaza", precio: 20000, img:"assets/s1.jpg"},
-	{ id: '1', tipo: "Sommier", modelo: "Dos plazas", precio: 60000, img: "assets/s2.jpg" },
-	{ id: '2', tipo: "Sommier", modelo: "Kingsize", precio: 200000, img: "assets/s3.jpg" },
-	{ id: '3', tipo: "Sillon", modelo: "Dos cuerpos", precio: 30000, img: "assets/dc.jpg" },
-	{ id: '4', tipo: "Sillon", modelo: "Tres cuerpos'", precio: 50000, img: "assets/tc.jpg" },
+	{ id: '0', tipo: "Remera", modelo: "Adidas Hulk", precio: 3000, img:"../assets/img/remera1.jpg"},
+	{ id: '1', tipo: "Remera", modelo: "Adidas Basic", precio: 3000, img: "../assets/img/remera2.jpg"},
+	{ id: '2', tipo: "Remera", modelo: "Nike Basic", precio: 3000, img: "../assets/img/remera3.jpg"},
+	{ id: '3', tipo: "Remeron", modelo: "Remeron FyP", precio: 2000, img: "../assets/img/remeron1.jpg" },
+	{ id: '4', tipo: "Remeron", modelo: "Remeron Adidas", precio: 5000, img: "../assets/img/remeron2.jpg" },
   ];
   
   const contenedorTienda = document.getElementById('contenedorTienda');
@@ -30,7 +30,7 @@ const productos = [
 	imgProducto.src = producto.img;
 	nombreProducto.append(producto.modelo);
 	precioProducto.append(`$${producto.precio}`);
-	botonComprar.append('Comprar');
+	botonComprar.append('Agregar al carrito');
 	botonComprar.id = `${producto.id}`;
 	
 	 
@@ -47,9 +47,6 @@ const productos = [
   
   }
   
-
-
-
 	
   const mostrarCarrito =  () => {
   
@@ -99,9 +96,9 @@ botonComprafinal.onclick = compraFinal;
 	   
   }
   
-  btnbuscar.onclick = buscarProducto;
+  btnbuscar.onclick === buscarProducto;
 
-  const URL = 'javascript/js/products.json'
+	const URL = 'javascript/js/products.json'
 
 function renderProducts( productos) {
 	productos.forEach(producto => {
